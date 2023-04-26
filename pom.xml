@@ -10,9 +10,14 @@
 
     <modules>
         <module>ConfigurationService</module>
-        <module>ExamService</module>
+        <module>VehicleService</module>
         <module>ServiceDiscovery</module>
-        <module>StudentService</module>
+        <module>InsuranceService</module>
+        <module>WarningService</module>
+        <module>ServiceDiscovery</module>
+        <module>UserManagementService</module>
+        <module>UserSupportService</module>
+        <module>ServiceDiscovery</module>
     </modules>
 
 </project>

@@ -8,10 +8,10 @@
 		<version>2.7.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>de.fhdo.sep.student</groupId>
-	<artifactId>de.fhdo.sep.student</artifactId>
+	<groupId>roadrash</groupId>
+	<artifactId>vehicleservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>StudentService</name>
+	<name>VehicleService</name>
 	<description>Example Spring Microservice</description>
 	<properties>
 		<java.version>11</java.version>

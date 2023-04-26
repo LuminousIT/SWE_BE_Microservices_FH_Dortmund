@@ -1,17 +1,13 @@
-# SummerSchool2022-Exercises
-This code is part of the exercise to create a microservice architecture for the Summer School 2022 in Stream SEP at University of Applied Sciences and Arts Dortmund.
+RoadRash - Road Side Assistance Application
 
-## Purpose
-During the Summer School course, we will jointly develop a microservice architecture. 
+RoadRash is a road side assistance application that provides support and services to drivers who experience issues while driving. The application consists of the following microservices:
 
-The code in this repository represents an example of an exam service. Details can be found in the lecture slides.
+    UserSupport
+    UserManagement
+    InsuranceManagement
+    VehicleFixing
+    WarningManagement
 
-## Technology
-The service is developed using Java and Spring Boot.
+Each of these microservices provides a specific function to help drivers in need. The UserSupport microservice provides assistance to users who require help with their vehicle or driving, while the UserManagement microservice handles user registration and authentication. The InsuranceManagement microservice helps users to manage their insurance policies and claims, and the VehicleFixing microservice provides support for vehicle repairs. Finally, the WarningManagement microservice alerts users to potential hazards and dangers on the road.
 
-## Startup 
-Start the microservices in the following order to avoid problems:
-- ConfigurationService
-- DiscoveryService
-- Exam- and StudentService
-
+With RoadRash, drivers can have peace of mind knowing that help is always available when they need it most.

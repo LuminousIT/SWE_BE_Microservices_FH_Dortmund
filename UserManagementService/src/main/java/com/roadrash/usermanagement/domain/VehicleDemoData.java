@@ -6,8 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 
 public class VehicleDemoData {
-    @JsonProperty("model")
-    private String model;
+
     @JsonProperty("timestamp")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
     private Date timestamp;
@@ -18,6 +17,9 @@ public class VehicleDemoData {
 
     @JsonProperty("userID")
     private Long userID;
+
+    @JsonProperty("model")
+    private String model;
 
     public Long getUserID() {
         return userID;

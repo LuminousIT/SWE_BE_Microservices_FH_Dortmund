@@ -70,15 +70,27 @@ public class VehicleManagementRestApi {
         ObjectMapper objectMapper = new ObjectMapper();
         VehicleDemoData[] testData = objectMapper.readValue(jsonFile, VehicleDemoData[].class);
 
-//        model.addAttribute("vehicleBreakdowns", testData);
-//
-//        for (VehicleDemoData vehicle : testData) {
-//            model.addAttribute("model", vehicle.getModel());
-//            model.addAttribute("timestamp", vehicle.getTimestamp().toString());
-//            model.addAttribute("location", (vehicle.getLocation().getLatitude() + "(lat) " + vehicle.getLocation().getLongitude() + "(lon)").toString());
-//            model.addAttribute("Hardware Fault Code", vehicle.getErrorCode());
-//        }
+        for (VehicleDemoData vehicle : testData) {
+            if(vehicle.getUserID() == id){
+                return vehicle;
+            }
+        }
 
-        return testData[id-1];
+        return null;
+    }
+
+    @GetMapping("/error-information/{code}")
+    public VehicleDemoData getVehicleDataByErrorCode(@PathVariable String code) throws IOException {
+        File jsonFile = new ClassPathResource("vehicleInfo.json").getFile();
+        ObjectMapper objectMapper = new ObjectMapper();
+        VehicleDemoData[] testData = objectMapper.readValue(jsonFile, VehicleDemoData[].class);
+
+        for (VehicleDemoData vehicle : testData) {
+            if(vehicle.getErrorCode().equals(code)){
+                return vehicle;
+            }
+        }
+
+        return null;
     }
 }

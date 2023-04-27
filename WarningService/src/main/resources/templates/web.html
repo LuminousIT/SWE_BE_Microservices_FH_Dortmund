@@ -18,16 +18,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="exam : ${exams}">
-                    <td th:text="${exam.name}"></td>
-                    <td th:text="${exam.description}"></td>
+                <tr th:each="userManagement : ${exams}">
+                    <td th:text="${userManagement.name}"></td>
+                    <td th:text="${userManagement.description}"></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div>
         <h2>Add Exam</h2>
-        <form action="#" th:action="@{/addExam}" th:object="${exam}" method="post">
+        <form action="#" th:action="@{/addExam}" th:object="${userManagement}" method="post">
             <table>
                 <tr>
                     <td><label th:text="Name" /></td>

@@ -1,10 +1,10 @@
-package de.fhdo.sep.exam;
+package com.roadrash.usermanagement;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ExamServiceApplicationTests {
+class UserManagementServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

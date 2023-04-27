@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-public class UserAccount {
+public class UserAccountDomain {
     @Id
     @GeneratedValue
     private UUID userId;
@@ -12,7 +12,7 @@ public class UserAccount {
     private String email;
     private String password;
 
-    private VehicleInfo vehicleInfo;
+//    private VehicleInfo vehicleInfo;
 
     @Embedded
     private ContactDetails contactDetails;
@@ -21,7 +21,7 @@ public class UserAccount {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
-    public UserAc
+//    public UserAc
 
     // Getters and setters
 
@@ -47,3 +47,4 @@ enum UserRole {
     REGULAR_USER,
     ADMINISTRATOR,
     SUPPORT_ST
+}

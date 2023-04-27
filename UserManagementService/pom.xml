@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>roadrash</groupId>
-	<artifactId>de.fhdo.sep.exam</artifactId>
+	<artifactId>usermanagement</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>UserManagement</name>
 	<description>Example Spring Microservice</description>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,5 +62,23 @@ public class VehicleManagementRestApi {
 //        }
 
         return testData;
+    }
+
+    @GetMapping("/information/{id}")
+    public VehicleDemoData getVehicleDataByUserID(@PathVariable int id) throws IOException {
+        File jsonFile = new ClassPathResource("vehicleInfo.json").getFile();
+        ObjectMapper objectMapper = new ObjectMapper();
+        VehicleDemoData[] testData = objectMapper.readValue(jsonFile, VehicleDemoData[].class);
+
+//        model.addAttribute("vehicleBreakdowns", testData);
+//
+//        for (VehicleDemoData vehicle : testData) {
+//            model.addAttribute("model", vehicle.getModel());
+//            model.addAttribute("timestamp", vehicle.getTimestamp().toString());
+//            model.addAttribute("location", (vehicle.getLocation().getLatitude() + "(lat) " + vehicle.getLocation().getLongitude() + "(lon)").toString());
+//            model.addAttribute("Hardware Fault Code", vehicle.getErrorCode());
+//        }
+
+        return testData[id-1];
     }
 }

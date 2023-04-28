@@ -1,0 +1,14 @@
+[
+  {
+    "id": 99092,
+    "errorCode": "P0128",
+    "defectComponentType": "Software",
+    "isComponentAvailable": false
+  },
+  {
+    "id": 9392,
+    "errorCode": "P0456",
+    "defectComponentType": "Hardware",
+    "isComponentAvailable": true
+  }
+]

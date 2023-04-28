@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Fix Update</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <h2>What's the Error Code?</h2>
+  <form th:action="@{/api/vehicle-fix/information/{code}}" method="get" th:object="${getDefectComponentDataByErrorCode}">
+      <input type="text" th:value="${code}">
+      <button type="submit">Search</button>
+  </form>
+
+    <table>
+        <tr>
+            <th>
+                Error Code
+            </th>
+            <th>
+                Vehicle Location
+            </th>
+            <th>
+                Component Available?
+            </th>
+            <th>
+                Component Type
+            </th>
+        </tr>
+        <tr>
+            <td th:text="${errorCode}" />
+            <td th:text="${location.latitude} ${location.longitude}" />
+            <td th:text="${isComponentAvailable}" />
+            <td th:text="${defectComponentType}" />
+        </tr>
+    </table>
+
+</body>
+</html>

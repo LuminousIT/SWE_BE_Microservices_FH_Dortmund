@@ -1,6 +1,7 @@
 package com.roadrash.usermanagement.service;
 
 import com.roadrash.usermanagement.domain.UserInfo;
+import com.roadrash.usermanagement.domain.VehicleErrorInfo;
 import com.roadrash.usermanagement.domain.VehicleInfo;
 import com.roadrash.usermanagement.repo.UserInfoRepository;
 import com.roadrash.usermanagement.repo.VehicleInfoRepository;

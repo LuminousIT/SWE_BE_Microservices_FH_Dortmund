@@ -26,36 +26,4 @@ public class UserManagementWebController {
         return "usermanagement/list";
     }
 
-//    @GetMapping("/add")
-//    public String showAddUserForm(Model model) {
-//        model.addAttribute("userAccount", new UserAccount());
-//        return "usermanagement/add";
-//    }
-//
-//    @PostMapping("/add")
-//    public String addUser(UserAccount userAccount) {
-//        userManagementService.save(userAccount);
-//        return "redirect:/usermanagement";
-//    }
-//
-//    @GetMapping("/edit")
-//    public String showEditUserForm(@RequestParam("id") UUID userId, Model model) {
-//        Optional<UserAccount> userAccount = userManagementService.findById(userId);
-//        userAccount.ifPresent(account -> model.addAttribute("userAccount", account));
-//        return "usermanagement/edit";
-//    }
-//
-//    @PostMapping("/edit")
-//    public String editUser(UserAccount userAccount) {
-//        userManagementService.save(userAccount);
-//        return "redirect:/usermanagement";
-//    }
-//
-//    @GetMapping("/delete")
-//    public String deleteUser(@RequestParam("id") UUID userId) {
-//        userManagementService.deleteById(userId);
-//        return "redirect:/usermanagement";
-//    }
-
-    // Add more methods as needed
 }

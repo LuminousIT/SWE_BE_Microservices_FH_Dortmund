@@ -1,11 +1,11 @@
-package com.roadrash.assistance.vehicleservice.domain;
+package com.roadrash.usermanagement.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 
-@Entity
 public class DefectComponent {
+
     @Id
     @GeneratedValue
     private Long id;
@@ -50,6 +50,25 @@ public class DefectComponent {
 
     public GeoLocation getLocation() {
         return location;
+    }
+
+    public String latitude;
+    public String longitude;
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
     public void setLocation(GeoLocation location) {
@@ -115,7 +134,7 @@ public class DefectComponent {
     }
 
     public void setErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-    }
+            this.errorCode = errorCode;
+        }
 
 }

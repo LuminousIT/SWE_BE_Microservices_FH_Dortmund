@@ -1,5 +1,6 @@
 package com.roadrash.usermanagement.api;
 
+import com.roadrash.usermanagement.domain.LoginDTO;
 import com.roadrash.usermanagement.domain.UserAccountDomain;
 import com.roadrash.usermanagement.domain.UserInfo;
 import com.roadrash.usermanagement.service.UserManagementService;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/users")
 public class UserManagementRestApi {
@@ -33,6 +35,11 @@ public class UserManagementRestApi {
     @PostMapping
     public UserInfo createUser(@RequestBody UserInfo UserInfo) {
         return userManagementService.createUser(UserInfo);
+    }
+
+    @PostMapping("/login")
+    public Object login(@RequestBody LoginDTO LoginDTO) {
+        return userManagementService.login(LoginDTO);
     }
 
     @PutMapping("/{id}")

@@ -3,12 +3,45 @@
     "id": 99092,
     "errorCode": "P0128",
     "defectComponentType": "Software",
-    "isComponentAvailable": false
+    "isComponentAvailable": false,
+    "userID": 1,
+    "supportID": "3434DF",
+    "supportTel": "+49138843443"
+  },
+  {
+    "id": 939,
+    "errorCode": "P0456",
+    "defectComponentType": "Hardware",
+    "isComponentAvailable": true,
+    "userID": 2,
+    "supportID": "2343FS",
+    "supportTel": "+49138843443"
   },
   {
     "id": 9392,
-    "errorCode": "P0456",
+    "errorCode": "P0457",
+    "defectComponentType": "Software",
+    "isComponentAvailable": true,
+    "userID": 2,
+    "supportID": "4642SF",
+    "supportTel": "+49138843443"
+  },
+  {
+    "id": 9394,
+    "errorCode": "P0458",
     "defectComponentType": "Hardware",
-    "isComponentAvailable": true
+    "isComponentAvailable": true,
+    "userID": 1,
+    "supportID": "2345GS",
+    "supportTel": "+49138843443"
+  },
+  {
+    "id": 9396,
+    "errorCode": "P0293",
+    "defectComponentType": "Hardware",
+    "isComponentAvailable": false,
+    "userID": 1,
+    "supportID": "2345GY",
+    "supportTel": "+49138843443"
   }
 ]

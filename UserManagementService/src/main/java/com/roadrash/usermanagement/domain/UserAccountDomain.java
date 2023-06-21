@@ -21,30 +21,13 @@ public class UserAccountDomain {
     @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
-//    public UserAc
-
-    // Getters and setters
-
-    // equals and hashCode methods
-
-    // toString method
 }
 
 @Embeddable
 class ContactDetails {
-    private String phoneNumber;
-    private String address;
-    private String additionalContactInfo;
 
-    // Getters and setters
 
-    // equals and hashCode methods
-
-    // toString method
 }
 
 enum UserRole {
-    REGULAR_USER,
-    ADMINISTRATOR,
-    SUPPORT_ST
 }

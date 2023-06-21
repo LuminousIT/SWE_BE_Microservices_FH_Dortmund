@@ -3,8 +3,10 @@ package com.roadrash.assistance.vehicleservice.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonObject;
 import com.roadrash.assistance.vehicleservice.domain.DefectComponent;
+import com.roadrash.assistance.vehicleservice.domain.Place;
 import com.roadrash.assistance.vehicleservice.domain.VehicleDemoData;
 import com.roadrash.assistance.vehicleservice.service.DefectComponentService;
+import com.roadrash.assistance.vehicleservice.service.PlacesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.ui.Model;
@@ -14,17 +16,29 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/vehicle-fix")
 public class DefectComponentRestApi {
     @Autowired
     private DefectComponentService defectComponentService;
-    public DefectComponentRestApi(DefectComponentService defectComponentService) {
+
+    @Autowired
+    private PlacesService placesService;
+    public DefectComponentRestApi(DefectComponentService defectComponentService, PlacesService placesService) {
         this.defectComponentService = defectComponentService;
+        this.placesService = placesService;
     }
+
+    @GetMapping("/place")
+    public ArrayList<Place> getPlace() {
+        return placesService.search("restaurant", 123, 456, 20);
+    }
+
 
     @GetMapping
     public List<DefectComponent> getAllDefectComponent() {
@@ -48,40 +62,13 @@ public class DefectComponentRestApi {
 
     @GetMapping("/information")
     public DefectComponent[] getDefectComponentVehicleData(Model model) throws IOException {
-        File jsonFile = new ClassPathResource("./static/defectComponentData.json").getFile();
-        ObjectMapper objectMapper = new ObjectMapper();
-        DefectComponent[] defectComponentData = objectMapper.readValue(jsonFile, DefectComponent[].class);
-
-        return defectComponentData;
+        return defectComponentService.getDefectComponentVehData();
     }
 
     @GetMapping("/information/{code}")
     public DefectComponent getDefectComponentDataByErrorCode(@PathVariable String code, Model model) throws IOException {
         // fetch record of defect components
-        File jsonFile = new ClassPathResource("./static/defectComponentData.json").getFile();
-        ObjectMapper objectMapper = new ObjectMapper();
-        DefectComponent[] testData = objectMapper.readValue(jsonFile, DefectComponent[].class);
-//    System.out.println("error code " + code + " " + model.toString());
-        for (DefectComponent defectComponent : testData) {
-            if (defectComponent.getErrorCode().toString().equals(code)) {
-                // fetch record of vehicle with that error code from UserMgmtService
-                VehicleDemoData vehicleDefectInfo = defectComponentService.getDefectVehicleInformationByErrorCode(code);
-                defectComponent.setUserID(vehicleDefectInfo.getUserID().toString());
-                defectComponent.setLocation(vehicleDefectInfo.getLocation());
-//                defectComponent.setUserID(defect.get("userID"));
-
-                model.addAttribute("errorCode", defectComponent.getErrorCode());
-                model.addAttribute("isComponentAvailable", defectComponent.isComponentAvailable());
-                model.addAttribute("defectComponentType", defectComponent.getDefectComponentType());
-//                return "defectComponent";
-                return defectComponent;
-            }
-        }
-
-
-
-        return null;
+       return defectComponentService.getDefectComponentByCode(code);
     }
 
-    // TODO: Dispatch / Respond with SupportDetails
 }

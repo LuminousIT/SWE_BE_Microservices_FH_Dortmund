@@ -34,7 +34,7 @@ To Startup,
       - Created by: Samuel Oluwole
       -   * Exposed on Port 8085.
 3.  Warning Service: Gets Weather Forecast Report and Supply info to Frontend Service
-      - Created by: Mahmud, Samuel Oluwole
+      - Created by: Mahmudmar Rahman, Samuel Oluwole
       -  * Exposed on Port 8086.
 4.  Frontend Service: Dashboard to view Information. 
      * User signs on by creating an account and logging in with details.
@@ -44,6 +44,8 @@ To Startup,
      * Charts of Weather forecast to warn user.
       - Created by: Samuel Oluwole
       -  * Exposed on Port 3000.
+5. Insurance Service: 
+6. User Support Service:
 
 **Note: Communication happen within the localhost environment. Endpoints therefore communicate via http://localhost:[port]/{address}**
 
